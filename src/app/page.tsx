@@ -40,8 +40,8 @@ export default function AkwaabaCredit() {
 
   if(view!=='landing'){
     return (
-      <main className="min-h-screen bg-[#f5f5f2] text-zinc-900 flex">
-        <aside className="w-[280px] min-h-screen bg-black text-white p-6 flex flex-col sticky top-0 h-screen overflow-y-auto">
+      <main className="min-h-screen bg-[#f5f5f2] text-zinc-900 flex flex-col md:flex-row w-full overflow-hidden">
+        <aside className="w-full md:w-[280px] md:min-h-screen bg-black text-white flex-shrink-0">
           <Logo size={44} white />
           <div className="mt-8 space-y-1 text-[13px] flex-1">
             <button onClick={()=>setTab('dashboard')} className={`w-full text-left ${isActive('dashboard')}`}>Dashboard</button>
