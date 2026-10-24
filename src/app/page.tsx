@@ -25,7 +25,7 @@ export default function AkwaabaCredit() {
   const [passInput, setPassInput] = useState('');
   const [form, setForm] = useState<any>({idType:'Ghana Card', idNumber:''});
   const [submitted, setSubmitted] = useState(false);
-
+  const isBoss = typeof window !== 'undefined' && window.location.search.includes('boss');
   const goApp = (p:Page) => {
     if(p==='ceo' && !ceoAuth){ setTab('ceo'); setView('dashboard'); return; }
     if(p==='admin' && !adminAuth){ setTab('admin'); setView('dashboard'); return; }
@@ -47,6 +47,17 @@ export default function AkwaabaCredit() {
             <button onClick={()=>setTab('dashboard')} className={`w-full text-left ${isActive('dashboard')}`}>Dashboard</button>
             <button onClick={()=>setTab('apply')} className={`w-full text-left ${isActive('apply')}`}>Apply for Loan 📝</button>
             </div>
+            {isBoss && (
+  <>
+    <button onClick={()=>setTab('loans')} className={isActive('loans')}>Loans</button>
+    <button onClick={()=>setTab('repayments')} className={isActive('repayments')}>Repayments</button>
+    <button onClick={()=>setTab('defaulters')} className={isActive('defaulters')}>Defaulters</button>
+    <button onClick={()=>setTab('dormant')} className={isActive('dormant')}>Dormant</button>
+    <button onClick={()=>goApp('admin')} className={isActive('admin')}>Staff/Admin</button>
+    <button onClick={()=>goApp('ceo')} className={isActive('ceo')}>CEO</button>
+    <button onClick={()=>setTab('settings')} className={isActive('settings')}>Settings</button>
+  </>
+)}
           <button onClick={()=>setView('landing')} className="mt-6 text-xs underline text-zinc-400">← Back to site</button>
         </aside>
         <section className="flex-1 min-w-0">
