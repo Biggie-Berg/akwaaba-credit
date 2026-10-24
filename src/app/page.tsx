@@ -46,21 +46,9 @@ export default function AkwaabaCredit() {
           <div className="mt-8 space-y-1 text-[13px] flex-1">
             <button onClick={()=>setTab('dashboard')} className={`w-full text-left ${isActive('dashboard')}`}>Dashboard</button>
             <button onClick={()=>setTab('apply')} className={`w-full text-left ${isActive('apply')}`}>Apply for Loan 📝</button>
-            <button onClick={()=>setTab('loans')} className={`w-full text-left ${isActive('loans')}`}>Loans</button>
-            <button onClick={()=>setTab('repayments')} className={`w-full text-left ${isActive('repayments')}`}>Repayments</button>
-            <button onClick={()=>setTab('momo')} className={`w-full text-left ${isActive('momo')}`}>MoMo History</button>
-            <div className="text-[10px] tracking-widest text-zinc-500 mb-2 mt-6">MANAGEMENT</div>
-            <button onClick={()=>setTab('users')} className={`w-full text-left ${isActive('users')}`}>Users • 12.4k</button>
-            <button onClick={()=>setTab('defaulters')} className={`w-full text-left ${isActive('defaulters')}`}>Defaulters ⚠️ 342</button>
-            <button onClick={()=>setTab('dormant')} className={`w-full text-left ${isActive('dormant')}`}>Dormant 💤 1.1k</button>
-            <div className="text-[10px] tracking-widest text-zinc-500 mb-2 mt-6">ADMIN 🔐</div>
-            <button onClick={()=>goApp('admin')} className={`w-full text-left ${isActive('admin')}`}>Admin • Staff {adminAuth?'🔓':'🔒'}</button>
-            <button onClick={()=>goApp('ceo')} className={`w-full text-left ${isActive('ceo')}`}>CEO Dashboard {ceoAuth?'🔓':'🔒'} 👑</button>
-            <button onClick={()=>setTab('settings')} className={`w-full text-left ${isActive('settings')}`}>Settings</button>
-          </div>
+            </div>
           <button onClick={()=>setView('landing')} className="mt-6 text-xs underline text-zinc-400">← Back to site</button>
         </aside>
-
         <section className="flex-1 min-w-0">
           <header className="h-[70px] bg-white border-b flex items-center justify-between px-6 sticky top-0 z-10">
             <div className="flex items-center gap-3"><Logo size={36}/><span className="text-xs text-zinc-400 capitalize">| {tab}</span></div>
